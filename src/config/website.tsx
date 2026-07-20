@@ -75,8 +75,7 @@ export const websiteConfig: WebsiteConfig = {
   },
   mail: {
     provider: 'resend',
-    fromEmail:
-      'Desktop Explorer Wiki <hello@desktopexplorer.wiki>',
+    fromEmail: 'Desktop Explorer Wiki <hello@desktopexplorer.wiki>',
     supportEmail: 'hello@desktopexplorer.wiki',
   },
   newsletter: {
