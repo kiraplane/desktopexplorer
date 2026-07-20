@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Desktop Explorer Wiki</title>
+  <desc id="desc">A lavender retro monitor with an amber file and magenta cursor.</desc>
+  <rect width="64" height="64" fill="#071615"/>
+  <rect x="6" y="7" width="52" height="43" fill="#102625" stroke="#c4d0b8" stroke-width="3"/>
+  <rect x="10" y="11" width="44" height="6" fill="#8f92df"/>
+  <rect x="13" y="21" width="21" height="18" fill="#f0a23a" stroke="#071615" stroke-width="2"/>
+  <path d="M14 21h10l4 5h6v13H13V21Z" fill="#f0a23a" stroke="#071615" stroke-width="2"/>
+  <path d="m38 22 14 11-7 2 4 8-5 3-4-8-5 5 3-21Z" fill="#d44aa4" stroke="#f4f1df" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M24 50v5h16v-5M18 57h28" fill="none" stroke="#c4d0b8" stroke-width="3"/>
+  <rect x="47" y="12.5" width="3" height="3" fill="#071615"/>
+</svg>
