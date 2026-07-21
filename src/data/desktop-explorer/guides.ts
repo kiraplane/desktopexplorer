@@ -1,6 +1,6 @@
 import type { Guide, GuideVideo } from './types';
 
-const checkedAt = '2026-07-20';
+const checkedAt = '2026-07-21';
 const publishedAt = '2026-07-20';
 
 const videos = {
@@ -1282,6 +1282,68 @@ export const guides: Guide[] = [
         question: 'Does it use generative AI content?',
         answer:
           'The Steam disclosure says no generative AI content is present.',
+      },
+    ],
+  },
+  {
+    slug: 'patch-1-0-33-softlock-fixes',
+    path: '/guides/patch-1-0-33-softlock-fixes',
+    title: 'Desktop Explorer Patch 1.0.33',
+    seoTitle: 'Desktop Explorer 1.0.33 - Softlock and Puzzle Fixes',
+    seoDescription:
+      'Review Desktop Explorer 1.0.33 fixes for puzzle-file softlocks, Maze Screensaver, wormhole movement, mural text, colorlens and camera drift.',
+    summary:
+      'Version 1.0.33 focuses on stability after players modify puzzle-dependent files and fixes six specific progression or visual problems.',
+    category: 'Status',
+    difficulty: 'Status',
+    coverImageUrl: '/desktop-explorer/screenshots/0.jpg',
+    publishedAt: '2026-07-21',
+    updatedAt: '2026-07-21',
+    sourceStrategy: 'official',
+    sourceNotes:
+      'Summarized from the official July 20 Steam Patch Notes v1.0.33. The live patched client is the final authority for save-specific behavior.',
+    videoSearchQueries: [
+      'Desktop Explorer 1.0.33',
+      'Desktop Explorer softlock fix',
+    ],
+    tags: ['Patch', 'Softlock', 'Troubleshooting'],
+    relatedRoutes: [
+      '/guides/beginner-spoiler-light-hints',
+      '/guides/full-walkthrough',
+      '/guides/all-puzzle-solutions-passwords',
+      '/download',
+    ],
+    body: [
+      {
+        heading: 'Update before repairing puzzle state',
+        paragraphs: [
+          'Patch 1.0.33 addresses stability and softlocks caused by modifying files that a puzzle depends on. Let Steam finish the update, restart the game, and retest the affected profile before deleting saves or replaying a long section.',
+          'If the problem persists, note the profile, puzzle label, file you changed, and whether the object still exists in Trash. That information is more useful than reporting only that the game is stuck.',
+        ],
+      },
+      {
+        heading: 'Specific fixes in 1.0.33',
+        paragraphs: [
+          'The official patch restores wormhole spaceship movement, corrects the first mural.stp interaction text, prevents players from getting stuck on the Maze Screensaver, fixes colorlens filtering for 3D objects, and removes camera drift in the Arcade Store.',
+          'These fixes can make an older walkthrough look different at the exact failure point. Follow the current interface and use the walkthrough for route order rather than forcing the old broken behavior.',
+        ],
+      },
+      {
+        heading: 'Keep puzzle edits reversible',
+        paragraphs: [
+          'Rename, duplicate, move, or delete only when the clue calls for that action. Keep Trash available and avoid clearing it during an active profile. Reversible changes make both puzzle solving and bug recovery easier.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Which version fixes the Maze Screensaver softlock?',
+        answer: 'The official v1.0.33 patch lists that fix.',
+      },
+      {
+        question: 'Should I delete my save after a softlock?',
+        answer:
+          'Update and restart first. Delete or replace save data only after using official recovery advice and backing up the existing file.',
       },
     ],
   },

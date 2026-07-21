@@ -5,7 +5,7 @@ import type {
   KeywordMatrixItem,
 } from './types';
 
-export const checkedAt = '2026-07-20';
+export const checkedAt = '2026-07-21';
 
 export const siteFacts = {
   siteName: 'Desktop Explorer Wiki',
@@ -213,6 +213,14 @@ export const sources: DataSource[] = [
     checkedAt,
     confidence: 'high',
     note: 'Official patch posts plus current player language around puzzle, password and achievement blocks.',
+  },
+  {
+    type: 'official',
+    label: 'Desktop Explorer Patch Notes v1.0.33',
+    url: 'https://steamcommunity.com/games/2527160/announcements/detail/1838407329264506',
+    checkedAt,
+    confidence: 'high',
+    note: 'Official July 20 patch covering puzzle-file softlocks, wormhole movement, mural text, Maze Screensaver, colorlens filtering and Arcade Store camera drift.',
   },
   {
     type: 'youtube',
