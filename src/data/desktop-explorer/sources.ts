@@ -248,6 +248,14 @@ export const sources: DataSource[] = [
   },
   {
     type: 'youtube',
+    label: 'Dus10 first 10 puzzles walkthrough',
+    url: 'https://www.youtube.com/watch?v=8chb_61JDdE',
+    checkedAt: '2026-07-23',
+    confidence: 'medium',
+    note: 'Focused full-release Cave walkthrough verified puzzle by puzzle and embedded with per-page start times.',
+  },
+  {
+    type: 'youtube',
     label: 'SovereignSays any% proof of concept',
     url: 'https://www.youtube.com/watch?v=ynqKCvZcDvU',
     checkedAt,

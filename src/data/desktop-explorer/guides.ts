@@ -1,4 +1,4 @@
-import { cavePuzzleGuides } from './cave-puzzle-guides';
+import { cavePuzzleGuides, cavePuzzleVideoAt } from './cave-puzzle-guides';
 import type { Guide, GuideVideo } from './types';
 
 const checkedAt = '2026-07-21';
@@ -386,6 +386,8 @@ export const guides: Guide[] = [
       'Desktop Explorer puzzle 9',
       'Desktop Explorer altar stones',
     ],
+    video: cavePuzzleVideoAt(989),
+    updatedAt: '2026-07-23',
     tags: ['Puzzle 9', 'Altar', 'Stones'],
     relatedRoutes: [
       '/guides/cave-puzzles-0-10',
@@ -457,6 +459,8 @@ export const guides: Guide[] = [
       'Desktop Explorer puzzle 10',
       'Desktop Explorer Beyond solution',
     ],
+    video: cavePuzzleVideoAt(1083),
+    updatedAt: '2026-07-23',
     tags: ['Puzzle 10', 'Beyond', 'Answers'],
     relatedRoutes: [
       '/guides/cave-puzzles-0-10',

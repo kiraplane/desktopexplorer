@@ -26,6 +26,27 @@ function toSectionId(heading: string) {
     .replace(/^-|-$/g, '');
 }
 
+function getAbsoluteUrl(url: string) {
+  return url.startsWith('http') ? url : `${siteFacts.domain}${url}`;
+}
+
+function getVideoEmbedUrl(video: NonNullable<Guide['video']>) {
+  const searchParams = new URLSearchParams({ rel: '0' });
+
+  if (video.startSeconds) {
+    searchParams.set('start', String(video.startSeconds));
+  }
+
+  return `https://www.youtube-nocookie.com/embed/${video.id}?${searchParams.toString()}`;
+}
+
+function formatVideoStart(startSeconds: number) {
+  const minutes = Math.floor(startSeconds / 60);
+  const seconds = startSeconds % 60;
+
+  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
 function getRouteLabel(route: string) {
   return (
     routeLabels[route] ??
@@ -256,9 +277,10 @@ export function GuideArticle({
     graph.push({
       '@type': 'VideoObject',
       name: guide.video.title,
-      thumbnailUrl: `${siteFacts.domain}${guide.video.thumbnailUrl}`,
+      thumbnailUrl: getAbsoluteUrl(guide.video.thumbnailUrl),
       uploadDate: guide.video.publishedAt,
-      embedUrl: `https://www.youtube-nocookie.com/embed/${guide.video.id}`,
+      embedUrl: getVideoEmbedUrl(guide.video),
+      contentUrl: guide.video.url,
     });
   }
 
@@ -376,7 +398,7 @@ export function GuideArticle({
                       <section className="overflow-hidden rounded-xl border border-[#536e69] bg-black">
                         <iframe
                           className="aspect-video w-full"
-                          src={`https://www.youtube-nocookie.com/embed/${guide.video.id}?rel=0`}
+                          src={getVideoEmbedUrl(guide.video)}
                           title={guide.video.title}
                           loading="lazy"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -392,7 +414,11 @@ export function GuideArticle({
                           >
                             {guide.video.title}
                           </a>{' '}
-                          by {guide.video.channel}. {ui.videoSuffix}
+                          by {guide.video.channel}
+                          {guide.video.startSeconds
+                            ? ` · starts at ${formatVideoStart(guide.video.startSeconds)}`
+                            : ''}
+                          . {ui.videoSuffix}
                         </p>
                       </section>
                     ) : null}

@@ -1,7 +1,26 @@
-import type { Guide } from './types';
+import type { Guide, GuideVideo } from './types';
 
 const publishedAt = '2026-07-21';
-const updatedAt = '2026-07-21';
+const updatedAt = '2026-07-23';
+
+const cavePuzzleWalkthrough = {
+  id: '8chb_61JDdE',
+  title: 'Desktop Explorers - Part 1 | First 10 Puzzles Walkthrough',
+  channel: 'Dus10',
+  url: 'https://www.youtube.com/watch?v=8chb_61JDdE',
+  thumbnailUrl: 'https://i.ytimg.com/vi/8chb_61JDdE/sddefault.jpg',
+  publishedAt: '2026-07-18',
+  viewCountLabel: 'Focused Cave puzzle walkthrough',
+  checkedAt: '2026-07-23',
+} satisfies GuideVideo;
+
+export function cavePuzzleVideoAt(startSeconds: number): GuideVideo {
+  return {
+    ...cavePuzzleWalkthrough,
+    url: `${cavePuzzleWalkthrough.url}&t=${startSeconds}s`,
+    startSeconds,
+  };
+}
 
 const commonSourceNotes =
   'The visible-folder numbering and actions were cross-checked against current full-release walkthroughs and the active Steam guide. Some community guides omit the prologue and shift password numbers down by one; each page calls out that alternate count.';
@@ -53,6 +72,7 @@ export const cavePuzzleGuides: Guide[] = [
       'Desktop Explorer Puzzle 0 prologue',
       'Desktop Explorer Halibut README',
     ],
+    video: cavePuzzleVideoAt(76),
     tags: ['Puzzle 0', 'Prologue', 'Halibut'],
     relatedRoutes: relatedRoutes(0),
     body: [
@@ -123,6 +143,7 @@ export const cavePuzzleGuides: Guide[] = [
       'Desktop Explorer Puzzle 1 fortuna',
       'Desktop Explorer LostOnTheShore password',
     ],
+    video: cavePuzzleVideoAt(286),
     tags: ['Puzzle 1', 'Fortuna', 'Go In'],
     relatedRoutes: relatedRoutes(1),
     body: [
@@ -188,6 +209,7 @@ export const cavePuzzleGuides: Guide[] = [
       'Desktop Explorer Puzzle 2 Inanna',
       'Desktop Explorer long scroll answer',
     ],
+    video: cavePuzzleVideoAt(350),
     tags: ['Puzzle 2', 'Inanna', 'Ancient Ruins'],
     relatedRoutes: relatedRoutes(2),
     body: [
@@ -253,6 +275,7 @@ export const cavePuzzleGuides: Guide[] = [
       'Desktop Explorer Puzzle 3 Elephas',
       'Desktop Explorer Narrow Tunnel word wrap',
     ],
+    video: cavePuzzleVideoAt(420),
     tags: ['Puzzle 3', 'Elephas', 'Word Wrap'],
     relatedRoutes: relatedRoutes(3),
     body: [
@@ -319,6 +342,7 @@ export const cavePuzzleGuides: Guide[] = [
       'Desktop Explorer Puzzle 4 Salve',
       'Desktop Explorer Crossroads source code',
     ],
+    video: cavePuzzleVideoAt(501),
     tags: ['Puzzle 4', 'Salve', 'Source Code'],
     relatedRoutes: relatedRoutes(4),
     body: [
@@ -390,6 +414,7 @@ export const cavePuzzleGuides: Guide[] = [
       'Desktop Explorer Puzzle 5 PORTONUS',
       'Desktop Explorer Big Door key err',
     ],
+    video: cavePuzzleVideoAt(530),
     tags: ['Puzzle 5', 'PORTONUS', 'File Extension'],
     relatedRoutes: relatedRoutes(5),
     body: [
@@ -454,6 +479,7 @@ export const cavePuzzleGuides: Guide[] = [
       'Desktop Explorer Puzzle 6 MMTT',
       'Desktop Explorer etched walls author',
     ],
+    video: cavePuzzleVideoAt(664),
     tags: ['Puzzle 6', 'MMTT', 'Metadata'],
     relatedRoutes: relatedRoutes(6),
     body: [
@@ -520,6 +546,7 @@ export const cavePuzzleGuides: Guide[] = [
       'Desktop Explorer Puzzle 7 Kassandra',
       'Desktop Explorer Dark Sanctum hidden files',
     ],
+    video: cavePuzzleVideoAt(769),
     tags: ['Puzzle 7', 'Kassandra', 'Hidden Files'],
     relatedRoutes: relatedRoutes(7),
     body: [
@@ -585,6 +612,7 @@ export const cavePuzzleGuides: Guide[] = [
       'Desktop Explorer Puzzle 8 Rubicon',
       'Desktop Explorer where to enter Rubicon',
     ],
+    video: cavePuzzleVideoAt(804),
     tags: ['Puzzle 8', 'Rubicon', 'Altar Entrance'],
     relatedRoutes: relatedRoutes(8),
     body: [
