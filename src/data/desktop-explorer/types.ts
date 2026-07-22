@@ -89,6 +89,8 @@ export type GuideDifficulty =
 export interface Guide {
   slug: string;
   path: string;
+  puzzleNumber?: number;
+  answerSummary?: string;
   title: string;
   seoTitle: string;
   seoDescription: string;

@@ -1,5 +1,5 @@
 import type { Locale } from 'next-intl';
-import { featuredGuides, getGuide, guides } from './guides';
+import { featuredGuides, getGuide, getPuzzleGuides, guides } from './guides';
 import { gameFacts, keywordMatrix, siteDescription } from './sources';
 import type { GameFact, Guide, GuideFaq } from './types';
 
@@ -47,6 +47,15 @@ export const routeLabels: Record<string, string> = {
   '/guides/full-walkthrough': 'Full Walkthrough',
   '/guides/all-puzzle-solutions-passwords': 'All Solutions & Passwords',
   '/guides/cave-puzzles-0-10': 'Cave Puzzles 0–10',
+  '/guides/puzzle-0-prologue': 'Puzzle 0: Prologue',
+  '/guides/puzzle-1-fortuna-solution': 'Puzzle 1: Fortuna',
+  '/guides/puzzle-2-inanna-solution': 'Puzzle 2: Inanna',
+  '/guides/puzzle-3-elephas-solution': 'Puzzle 3: Elephas',
+  '/guides/puzzle-4-salve-solution': 'Puzzle 4: Salve',
+  '/guides/puzzle-5-portonus-solution': 'Puzzle 5: PORTONUS',
+  '/guides/puzzle-6-mmtt-solution': 'Puzzle 6: MMTT',
+  '/guides/puzzle-7-kassandra-solution': 'Puzzle 7: Kassandra',
+  '/guides/puzzle-8-rubicon-solution': 'Puzzle 8: Rubicon',
   '/guides/puzzle-9-altar-solution': 'Puzzle 9: Altar',
   '/guides/puzzle-10-beyond-solution': 'Puzzle 10: Beyond',
   '/guides/temple-walkthrough': 'Temple Walkthrough',
@@ -69,6 +78,10 @@ export function getLocalizedGuide(slug: string, _locale?: Locale | string) {
 
 export function getLocalizedGuides(_locale?: Locale | string) {
   return guides;
+}
+
+export function getLocalizedPuzzleGuides(_locale?: Locale | string) {
+  return getPuzzleGuides();
 }
 
 export function getLocalizedFeaturedGuides(_locale?: Locale | string) {

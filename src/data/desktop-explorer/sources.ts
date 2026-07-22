@@ -223,6 +223,14 @@ export const sources: DataSource[] = [
     note: 'Official July 20 patch covering puzzle-file softlocks, wormhole movement, mural text, Maze Screensaver, colorlens filtering and Arcade Store camera drift.',
   },
   {
+    type: 'official',
+    label: 'Desktop Explorer Patch Notes v1.0.36',
+    url: siteFacts.officialCommunityUrl,
+    checkedAt,
+    confidence: 'high',
+    note: 'Latest official July 20 patch checked during this run; it fixes rapid duplicate-password submission softlocks, raw_ore renaming, note metadata and localization issues.',
+  },
+  {
     type: 'youtube',
     label: 'Official release date trailer',
     url: 'https://www.youtube.com/watch?v=qfpuWJIeCXo',
@@ -370,31 +378,85 @@ export const keywordMatrix: KeywordMatrixItem[] = [
     'Puzzle passwords, not promo codes.'
   ),
   item(
+    'desktop explorer puzzle 0',
+    'Start the Cave prologue.',
+    '/guides/puzzle-0-prologue',
+    'P1',
+    'keep',
+    'Current full-release walkthrough structure.',
+    'Visible-folder count; explain the alternate password-only count.'
+  ),
+  item(
+    'desktop explorer puzzle 1',
+    'Solve the Fortuna file.',
+    '/guides/puzzle-1-fortuna-solution',
+    'P1',
+    'keep',
+    'Current full-release walkthrough structure.',
+    'LostOnTheShore.stp and fortuna.'
+  ),
+  item(
+    'desktop explorer puzzle 2',
+    'Find the Ancient Ruins word.',
+    '/guides/puzzle-2-inanna-solution',
+    'P1',
+    'keep',
+    'Current full-release walkthrough structure.',
+    'long_scroll.npg and Inanna.'
+  ),
+  item(
     'desktop explorer puzzle 3',
-    'Solve a Cave puzzle.',
-    '/guides/cave-puzzles-0-10',
+    'Solve the Narrow Tunnel.',
+    '/guides/puzzle-3-elephas-solution',
     'P0',
     'keep',
-    'Google autocomplete.',
-    'Cave hub with anchors.'
+    'GSC query impressions on 2026-07-21.',
+    'Word Wrap, resize and Elephas.'
   ),
   item(
     'desktop explorer puzzle 4',
-    'Solve a Cave puzzle.',
-    '/guides/cave-puzzles-0-10',
+    'Solve the Crossroads source clue.',
+    '/guides/puzzle-4-salve-solution',
     'P0',
     'keep',
-    'Google autocomplete.',
-    'Cave hub with anchors.'
+    'GSC: 6 impressions, 3 clicks and position 5.2 on 2026-07-21.',
+    'View detective_memories.stp source and use Salve.'
+  ),
+  item(
+    'desktop explorer puzzle 5',
+    'Repair the Big Door key.',
+    '/guides/puzzle-5-portonus-solution',
+    'P0',
+    'keep',
+    'GSC query impressions on 2026-07-21.',
+    'RENAMEIT, key.err and PORTONUS.'
   ),
   item(
     'desktop explorer puzzle 6',
-    'Solve a Cave puzzle.',
-    '/guides/cave-puzzles-0-10',
+    'Read the Lights Out metadata.',
+    '/guides/puzzle-6-mmtt-solution',
+    'P1',
+    'keep',
+    'Autocomplete and current walkthrough coverage.',
+    'Author metadata answer MMTT.'
+  ),
+  item(
+    'desktop explorer puzzle 7',
+    'Reveal the Dark Sanctum file.',
+    '/guides/puzzle-7-kassandra-solution',
     'P0',
     'keep',
-    'Google autocomplete.',
-    'Cave hub with anchors.'
+    'GSC query impressions on 2026-07-21.',
+    'Hidden Files and Kassandra.'
+  ),
+  item(
+    'desktop explorer puzzle 8',
+    'Find where Rubicon belongs.',
+    '/guides/puzzle-8-rubicon-solution',
+    'P1',
+    'keep',
+    'Current Steam discussion and full-release walkthroughs.',
+    'Target the hidden Puzzle9_Altar entrance.'
   ),
   item(
     'desktop explorer puzzle 9',
@@ -402,7 +464,7 @@ export const keywordMatrix: KeywordMatrixItem[] = [
     '/guides/puzzle-9-altar-solution',
     'P0',
     'keep',
-    'Head autocomplete and discussions.',
+    'GSC: 13 visible impressions across variants on 2026-07-21.',
     'Dedicated tricky route.'
   ),
   item(
@@ -411,7 +473,7 @@ export const keywordMatrix: KeywordMatrixItem[] = [
     '/guides/puzzle-10-beyond-solution',
     'P0',
     'keep',
-    'Head autocomplete.',
+    'GSC: 16 visible impressions across variants on 2026-07-21.',
     'Dedicated multi-answer route.'
   ),
   item(

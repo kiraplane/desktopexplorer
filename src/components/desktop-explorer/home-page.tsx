@@ -12,6 +12,7 @@ import {
   getHomeContent,
   getLocalizedFeaturedGuides,
   getLocalizedGameFacts,
+  getLocalizedPuzzleGuides,
 } from '@/data/desktop-explorer/localized';
 import { siteFacts } from '@/data/desktop-explorer/sources';
 import { LocaleLink } from '@/i18n/navigation';
@@ -80,6 +81,7 @@ export function DesktopExplorerHomePage({ locale }: { locale?: Locale }) {
   const content = getHomeContent(locale);
   const featured = getLocalizedFeaturedGuides(locale);
   const facts = getLocalizedGameFacts(locale);
+  const puzzleGuides = getLocalizedPuzzleGuides(locale);
   const graph = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -234,6 +236,45 @@ export function DesktopExplorerHomePage({ locale }: { locale?: Locale }) {
                   </p>
                 </div>
               ))}
+            </section>
+
+            <section className="border border-[#8f92df] bg-[#102625] p-5 md:p-7">
+              <div className="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <p className="font-mono text-xs font-semibold uppercase tracking-[.18em] text-[#d44aa4]">
+                    CAVE_INDEX
+                  </p>
+                  <h2 className="mt-2 font-display text-3xl font-black">
+                    Desktop Explorer Puzzle 0–10
+                  </h2>
+                  <p className="mt-2 max-w-3xl text-sm leading-7 text-[#a9c0bb]">
+                    Open the exact number shown in your Cave folder for the
+                    answer, clue method and numbering note.
+                  </p>
+                </div>
+                <LocaleLink
+                  href="/guides/cave-puzzles-0-10"
+                  className="inline-flex items-center gap-2 text-[#f0a23a] text-sm underline underline-offset-4"
+                >
+                  Browse Cave hub <ArrowRight className="size-4" />
+                </LocaleLink>
+              </div>
+              <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-6">
+                {puzzleGuides.map((guide) => (
+                  <LocaleLink
+                    key={guide.path}
+                    href={guide.path}
+                    className="group border border-[#536e69] bg-[#071615] px-3 py-3 hover:border-[#f0a23a] hover:bg-[#183837]"
+                  >
+                    <span className="block font-mono text-xs font-black text-[#8f92df] group-hover:text-[#f0a23a]">
+                      PUZZLE {guide.puzzleNumber}
+                    </span>
+                    <span className="mt-1 block truncate text-[#a9c0bb] text-xs">
+                      {guide.tags[1] ?? guide.tags[0]}
+                    </span>
+                  </LocaleLink>
+                ))}
+              </div>
             </section>
 
             <section className="border border-[#536e69] bg-[#102625] p-5 md:p-7">

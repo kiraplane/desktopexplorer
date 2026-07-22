@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   getGuideArticleUi,
+  getLocalizedPuzzleGuides,
   routeLabels,
 } from '@/data/desktop-explorer/localized';
 import { siteFacts } from '@/data/desktop-explorer/sources';
@@ -39,6 +40,148 @@ function getRouteLabel(route: string) {
           .join(' ')
       )
       .join(' ')
+  );
+}
+
+function PuzzleDirectory({
+  currentPath,
+  locale,
+}: {
+  currentPath: string;
+  locale?: Locale;
+}) {
+  const puzzleGuides = getLocalizedPuzzleGuides(locale);
+
+  return (
+    <section className="rounded-xl border border-[#8f92df]/70 bg-[#102625] p-5 md:p-7">
+      <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#d44aa4]">
+        CAVE_DIRECTORY
+      </p>
+      <div className="mt-2 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <h2 className="font-display text-2xl font-bold md:text-3xl">
+            Cave Puzzle 0–10 directory
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm leading-7 text-[#a9c0bb]">
+            Match the number visible in your folder. Each page gives the direct
+            answer, the desktop action that reveals it and the alternate
+            community numbering.
+          </p>
+        </div>
+        {currentPath !== '/guides/cave-puzzles-0-10' ? (
+          <LocaleLink
+            href="/guides/cave-puzzles-0-10"
+            className="text-[#f0a23a] text-sm underline underline-offset-4"
+          >
+            Open Cave hub
+          </LocaleLink>
+        ) : null}
+      </div>
+      <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-6">
+        {puzzleGuides.map((puzzleGuide) => {
+          const active = puzzleGuide.path === currentPath;
+
+          return (
+            <LocaleLink
+              key={puzzleGuide.path}
+              href={puzzleGuide.path}
+              aria-current={active ? 'page' : undefined}
+              className={
+                active
+                  ? 'border border-[#f0a23a] bg-[#f0a23a] px-3 py-3 text-[#071615]'
+                  : 'border border-[#536e69] bg-[#071615] px-3 py-3 text-[#f4f1df] hover:border-[#8f92df] hover:bg-[#183837]'
+              }
+            >
+              <span className="block font-mono text-xs font-black uppercase">
+                Puzzle {puzzleGuide.puzzleNumber}
+              </span>
+              <span className="mt-1 block truncate text-xs opacity-80">
+                {routeLabels[puzzleGuide.path]?.replace(
+                  `Puzzle ${puzzleGuide.puzzleNumber}: `,
+                  ''
+                )}
+              </span>
+            </LocaleLink>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+function PuzzleSequenceNavigation({
+  guide,
+  locale,
+}: {
+  guide: Guide & { puzzleNumber: number };
+  locale?: Locale;
+}) {
+  const puzzleGuides = getLocalizedPuzzleGuides(locale);
+  const currentIndex = puzzleGuides.findIndex(
+    (puzzleGuide) => puzzleGuide.puzzleNumber === guide.puzzleNumber
+  );
+  const previous = currentIndex > 0 ? puzzleGuides[currentIndex - 1] : null;
+  const next =
+    currentIndex >= 0 && currentIndex < puzzleGuides.length - 1
+      ? puzzleGuides[currentIndex + 1]
+      : null;
+
+  return (
+    <nav
+      aria-label="Adjacent Cave puzzles"
+      className="grid gap-3 sm:grid-cols-2"
+    >
+      {previous ? (
+        <LocaleLink
+          href={previous.path}
+          className="border border-[#536e69] bg-[#102625] p-4 text-[#f4f1df] hover:border-[#8f92df]"
+        >
+          <span className="font-mono text-xs uppercase text-[#8f92df]">
+            Previous puzzle
+          </span>
+          <span className="mt-1 block font-display text-lg font-bold">
+            Puzzle {previous.puzzleNumber}
+          </span>
+        </LocaleLink>
+      ) : (
+        <LocaleLink
+          href="/guides/cave-puzzles-0-10"
+          className="border border-[#536e69] bg-[#102625] p-4 text-[#f4f1df] hover:border-[#8f92df]"
+        >
+          <span className="font-mono text-xs uppercase text-[#8f92df]">
+            Cave directory
+          </span>
+          <span className="mt-1 block font-display text-lg font-bold">
+            Puzzle 0–10 hub
+          </span>
+        </LocaleLink>
+      )}
+      {next ? (
+        <LocaleLink
+          href={next.path}
+          className="border border-[#536e69] bg-[#102625] p-4 text-right text-[#f4f1df] hover:border-[#8f92df]"
+        >
+          <span className="font-mono text-xs uppercase text-[#8f92df]">
+            Next puzzle
+          </span>
+          <span className="mt-1 block font-display text-lg font-bold">
+            Puzzle {next.puzzleNumber}
+          </span>
+        </LocaleLink>
+      ) : (
+        <LocaleLink
+          href="/guides/temple-walkthrough"
+          className="border border-[#536e69] bg-[#102625] p-4 text-right text-[#f4f1df] hover:border-[#8f92df]"
+        >
+          <span className="font-mono text-xs uppercase text-[#8f92df]">
+            Continue the story
+          </span>
+          <span className="mt-1 block font-display text-lg font-bold">
+            Temple walkthrough
+          </span>
+        </LocaleLink>
+      )}
+    </nav>
   );
 }
 
@@ -179,6 +322,28 @@ export function GuideArticle({
                 />
               </div>
             </header>
+
+            {guide.answerSummary ? (
+              <section className="rounded-xl border border-[#f0a23a] bg-[#f0a23a]/10 p-5 md:p-6">
+                <p className="font-mono text-xs font-black uppercase tracking-[0.18em] text-[#f0a23a]">
+                  Puzzle answer
+                </p>
+                <p className="mt-3 text-base font-semibold leading-8 text-[#f4f1df] md:text-lg">
+                  {guide.answerSummary}
+                </p>
+              </section>
+            ) : null}
+
+            {guide.slug === 'cave-puzzles-0-10' ? (
+              <PuzzleDirectory currentPath={pathname} locale={locale} />
+            ) : null}
+
+            {typeof guide.puzzleNumber === 'number' ? (
+              <PuzzleSequenceNavigation
+                guide={guide as Guide & { puzzleNumber: number }}
+                locale={locale}
+              />
+            ) : null}
 
             <div className="rounded-xl border border-[#536e69] bg-[#102625] p-5 md:p-8">
               <div className="space-y-10">

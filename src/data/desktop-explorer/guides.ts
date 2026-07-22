@@ -1,3 +1,4 @@
+import { cavePuzzleGuides } from './cave-puzzle-guides';
 import type { Guide, GuideVideo } from './types';
 
 const checkedAt = '2026-07-21';
@@ -286,6 +287,8 @@ export const guides: Guide[] = [
     ...base,
     slug: 'cave-puzzles-0-10',
     path: '/guides/cave-puzzles-0-10',
+    answerSummary:
+      'Choose the number shown in your Cave folder. This hub uses the visible sequence from Puzzle 0 Prologue through Puzzle 10 Beyond and links each step to its own focused solution.',
     title: 'Desktop Explorer Cave Puzzles 0–10',
     seoTitle: 'Desktop Explorer Cave Puzzle Solutions 0–10',
     seoDescription:
@@ -310,37 +313,38 @@ export const guides: Guide[] = [
     ],
     body: [
       {
-        heading: 'Opening tasks and the first named answers',
+        heading: 'Use the visible Cave folder number',
         paragraphs: [
-          'The opening protected item uses guppy. Some walkthroughs call this Puzzle 0 and others fold it into Puzzle 1, which shifts later numbers by one. Continue by following the visible Cave labels. Enter fortuna when the Fortuna clue resolves, then Inanna for the related name clue.',
-          'For ELEPHAS, resize the text or window until the wrapped word exposes the elephant connection. For SALVE, inspect Source instead of guessing from what the page renders. These are tutorial puzzles for presentation versus underlying data: what appears on screen is not always the complete clue.',
+          'Start with the number and label visible in your own Cave folder, then use the numbered directory above. This wiki counts the workstation prologue as Puzzle 0, followed by Fortuna at Puzzle 1, Inanna at Puzzle 2 and Elephas at Puzzle 3.',
+          'A second community convention starts at the first password and calls Fortuna Puzzle 0. That count shifts the early password pages down by one, so always match the filename, room label and desktop operation instead of trusting a number by itself.',
         ],
         bullets: [
-          'OpenMe password: guppy',
-          'Early word answers: fortuna, Inanna',
-          'Resize/wrap answer: ELEPHAS',
-          'Source-code answer: SALVE',
+          'Puzzle 0: Prologue and README.npg',
+          'Puzzle 1: fortuna',
+          'Puzzle 2: Inanna',
+          'Puzzle 3: Elephas',
+          'Puzzle 4: Salve',
         ],
       },
       {
-        heading: 'PORTONUS through Rubicon',
+        heading: 'Quick route from Big Door to the altar',
         paragraphs: [
-          'The PORTONUS step uses the aligned rune instruction RENAMEIT. Rename key.err to key.img so that the file becomes usable as an image, then submit PORTONUS where requested. If the icon does not update, reopen the folder and confirm that you changed the extension rather than adding a second suffix.',
-          'MMTT comes from file Details, specifically the author metadata. Kassandra is connected to a hidden file, so enable the view that exposes hidden content before searching the visible folder again. Rubicon is the next direct answer. These steps deliberately rotate through extension, metadata and hidden-file mechanics.',
+          'Puzzle 5 uses the RENAMEIT rune instruction and key.err to reveal PORTONUS. Puzzle 6 hides MMTT in the Author metadata for etched_walls.img, while Puzzle 7 requires Hidden Files to expose the Kassandra clue.',
+          'Puzzle 8 gives you Rubicon and asks you to find the hidden Puzzle9_Altar entrance where the password belongs. Puzzle 9 then uses the three stone images, and Puzzle 10 finishes the Cave with the four Beyond answers.',
         ],
         bullets: [
-          'Rune instruction: RENAMEIT',
-          'Rename: key.err → key.img',
-          'Metadata answer: MMTT',
-          'Hidden-file answer: Kassandra',
-          'Following word: Rubicon',
+          'Puzzle 5: PORTONUS',
+          'Puzzle 6: MMTT',
+          'Puzzle 7: Kassandra',
+          'Puzzle 8: Rubicon',
+          'Puzzle 9: Large → Medium → Small',
         ],
       },
       {
-        heading: 'Puzzle 9 altar and Puzzle 10 Beyond',
+        heading: 'Keep clue files available for later puzzles',
         paragraphs: [
-          'At the altar, use the stone sizes rather than their loose positions. Stack Large, Medium and Small in the order demanded by the silhouette and labels. If the altar does not complete, remove the stones and rebuild cleanly; an almost aligned pile can look correct while one object is registered in the wrong slot.',
-          'Beyond uses a four-part answer sequence: crocodile, 14, fire and Walleye. Submit each answer to its matching clue rather than typing them as one password. The alternate input father triggers a separate secret interaction, so it is useful for achievement cleanup but is not the normal replacement for every family-related prompt.',
+          'The Cave reuses earlier clues and objects. Keep the three flat stone images from the relevant folders, leave Trash available and avoid clearing files simply because their first puzzle appears complete.',
+          'If a correct password does not register, confirm the destination window and submit only once. Current patches address password-folder softlocks, but rapid duplicate submissions can still make it difficult to tell whether a state change finished.',
         ],
       },
     ],
@@ -359,10 +363,14 @@ export const guides: Guide[] = [
       },
     ],
   },
+  ...cavePuzzleGuides,
   {
     ...base,
     slug: 'puzzle-9-altar-solution',
     path: '/guides/puzzle-9-altar-solution',
+    puzzleNumber: 9,
+    answerSummary:
+      'Open the altar with Rubicon, then stack flat_stone_L.img at the bottom, flat_stone_M.img in the middle and flat_stone_S.img on top.',
     title: 'Desktop Explorer Puzzle 9 Altar Solution',
     seoTitle: 'Desktop Explorer Puzzle 9 Altar & Stone Solution',
     seoDescription:
@@ -381,15 +389,15 @@ export const guides: Guide[] = [
     tags: ['Puzzle 9', 'Altar', 'Stones'],
     relatedRoutes: [
       '/guides/cave-puzzles-0-10',
+      '/guides/puzzle-8-rubicon-solution',
       '/guides/puzzle-10-beyond-solution',
       '/guides/all-puzzle-solutions-passwords',
-      '/guides/full-walkthrough',
     ],
     body: [
       {
         heading: 'Read the altar as a size diagram',
         paragraphs: [
-          'Puzzle 9 is a spatial desktop interaction rather than a typed password. Identify the three movable stones as Large, Medium and Small, then compare them with the altar silhouette. The visual target matters more than the stones’ starting order.',
+          'Use Rubicon on the hidden Puzzle9_Altar entrance before arranging the stones. Puzzle 9 is then a spatial desktop interaction rather than another typed password. Identify flat_stone_L.img, flat_stone_M.img and flat_stone_S.img, then compare them with the altar silhouette.',
           'Drag deliberately and release each piece only when it occupies a stable layer. A stone can overlap the right area without being accepted, especially if it is resting on an edge. Work from the base upward so later pieces do not dislodge the first one.',
         ],
       },
@@ -431,6 +439,9 @@ export const guides: Guide[] = [
     ...base,
     slug: 'puzzle-10-beyond-solution',
     path: '/guides/puzzle-10-beyond-solution',
+    puzzleNumber: 10,
+    answerSummary:
+      'Use ColorLens on the mural and submit crocodile, 14, fire and Walleye as four separate answers. Use father only for the optional secret interaction.',
     title: 'Desktop Explorer Puzzle 10 Beyond Solution',
     seoTitle: 'Desktop Explorer Puzzle 10 Answers: Beyond Solution',
     seoDescription:
@@ -1349,15 +1360,28 @@ export const guides: Guide[] = [
   },
 ];
 
-export const featuredGuides = [
-  guides[0],
-  guides[1],
-  guides[2],
-  guides[3],
-  guides[6],
-  guides[10],
-].filter((guide): guide is Guide => Boolean(guide));
-
 export function getGuide(slug: string) {
   return guides.find((guide) => guide.slug === slug);
 }
+
+export function getPuzzleGuides() {
+  return guides
+    .filter(
+      (guide): guide is Guide & { puzzleNumber: number } =>
+        typeof guide.puzzleNumber === 'number'
+    )
+    .sort((left, right) => left.puzzleNumber - right.puzzleNumber);
+}
+
+const featuredGuideSlugs = [
+  'beginner-spoiler-light-hints',
+  'full-walkthrough',
+  'all-puzzle-solutions-passwords',
+  'cave-puzzles-0-10',
+  'temple-walkthrough',
+  'achievements-guide',
+];
+
+export const featuredGuides = featuredGuideSlugs
+  .map((slug) => getGuide(slug))
+  .filter((guide): guide is Guide => Boolean(guide));

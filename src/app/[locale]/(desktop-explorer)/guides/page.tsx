@@ -11,6 +11,7 @@ import {
   getGuideArticleUi,
   getGuidesIndexContent,
   getLocalizedGuides,
+  getLocalizedPuzzleGuides,
 } from '@/data/desktop-explorer/localized';
 import { siteFacts } from '@/data/desktop-explorer/sources';
 import { LocaleLink } from '@/i18n/navigation';
@@ -46,6 +47,7 @@ export default async function GuidesPage({
   const content = getGuidesIndexContent(locale);
   const guideUi = getGuideArticleUi(locale);
   const guides = getLocalizedGuides(locale);
+  const puzzleGuides = getLocalizedPuzzleGuides(locale);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -98,6 +100,45 @@ export default async function GuidesPage({
               </p>
               <MobileWikiNav currentPath="/guides" locale={locale} />
             </header>
+
+            <section className="rounded-xl border border-[#8f92df]/70 bg-[#102625] p-5 md:p-6">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#d44aa4]">
+                CAVE_PUZZLES
+              </p>
+              <div className="mt-2 flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <h2 className="font-display text-2xl font-bold">
+                    Jump directly to Puzzle 0–10
+                  </h2>
+                  <p className="mt-2 text-sm leading-7 text-[#a9c0bb]">
+                    Use the number visible in your Cave folder. Every solution
+                    includes the exact answer and the action that reveals it.
+                  </p>
+                </div>
+                <LocaleLink
+                  href="/guides/cave-puzzles-0-10"
+                  className="text-[#f0a23a] text-sm underline underline-offset-4"
+                >
+                  Open Cave hub
+                </LocaleLink>
+              </div>
+              <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-6">
+                {puzzleGuides.map((guide) => (
+                  <LocaleLink
+                    key={guide.path}
+                    href={guide.path}
+                    className="border border-[#536e69] bg-[#071615] px-3 py-3 hover:border-[#8f92df] hover:bg-[#183837]"
+                  >
+                    <span className="font-mono text-xs font-black text-[#f0a23a]">
+                      PUZZLE {guide.puzzleNumber}
+                    </span>
+                    <span className="mt-1 block truncate text-[#a9c0bb] text-xs">
+                      {guide.tags[1] ?? guide.tags[0]}
+                    </span>
+                  </LocaleLink>
+                ))}
+              </div>
+            </section>
 
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {guides.map((guide) => (
