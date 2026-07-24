@@ -1,7 +1,7 @@
 import { cavePuzzleGuides, cavePuzzleVideoAt } from './cave-puzzle-guides';
 import type { Guide, GuideVideo } from './types';
 
-const checkedAt = '2026-07-21';
+const checkedAt = '2026-07-24';
 const publishedAt = '2026-07-20';
 
 const videos = {
@@ -1359,6 +1359,70 @@ export const guides: Guide[] = [
         question: 'Should I delete my save after a softlock?',
         answer:
           'Update and restart first. Delete or replace save data only after using official recovery advice and backing up the existing file.',
+      },
+    ],
+  },
+  {
+    slug: 'patch-1-0-41-softlock-fixes',
+    path: '/guides/patch-1-0-41-softlock-fixes',
+    title: 'Desktop Explorer Patch 1.0.41',
+    seoTitle: 'Desktop Explorer 1.0.41 - Softlock and Audio Fixes',
+    seoDescription:
+      'Review Desktop Explorer 1.0.41 fixes for Sketchy audio, screensavers during cutscenes, installation softlocks, Chapter 2 music and Chronolog sequence breaks.',
+    summary:
+      'Version 1.0.41 is the current July 23 stability pass and should be installed before replaying a Chapter 2 softlock or applying an old workaround.',
+    category: 'Status',
+    difficulty: 'Status',
+    coverImageUrl: '/desktop-explorer/screenshots/0.jpg',
+    publishedAt: '2026-07-24',
+    updatedAt: '2026-07-24',
+    sourceStrategy: 'official',
+    sourceNotes:
+      'Summarized from the official Steam Patch Notes v1.0.41. Save-specific behavior should be checked in the patched client.',
+    videoSearchQueries: [
+      'Desktop Explorer 1.0.41',
+      'Desktop Explorer Chapter 2 softlock',
+      'Desktop Explorer Chronolog softlock',
+    ],
+    tags: ['1.0.41', 'Softlock', 'Chapter 2'],
+    relatedRoutes: [
+      '/guides/full-walkthrough',
+      '/guides/admin-guppy-ending',
+      '/guides/achievements-guide',
+      '/download',
+    ],
+    body: [
+      {
+        heading: 'Install 1.0.41 before using a workaround',
+        paragraphs: [
+          'Patch 1.0.41 fixes progression problems after installing Desktop Explorer and a Chronolog sequence break in Chapter 2. Let Steam finish the update, restart the game and retest the existing profile before moving files or replacing a save.',
+          'The July 21 versions 1.0.36 and 1.0.39 also fixed launch-week softlocks and localization issues, so a machine several patches behind may behave differently from the current walkthrough.',
+        ],
+      },
+      {
+        heading: 'Chapter 2 fixes',
+        paragraphs: [
+          'The official notes address music getting stuck at the beginning of Chapter 2 and a Chronolog softlock caused by reaching content through a sequence break. Follow the normal route after updating rather than trying to reproduce the skipped order.',
+          'If the profile remains blocked, record the last completed desktop action, the Chronolog entry state and whether multiple NextSocial instances are open. That context helps distinguish the 1.0.41 case from the separate 1.0.39 NextSocial fix.',
+        ],
+      },
+      {
+        heading: 'Audio and screensaver fixes',
+        paragraphs: [
+          'Closing Sketchy should now stop its sound effect, and a screensaver should no longer activate during a cutscene. These are stability fixes, not puzzle requirements; do not wait for either old behavior when following a launch-day video.',
+          'Localization was updated again in 1.0.41. Use the current on-screen labels when a translated menu differs from an older guide, while keeping the same puzzle order.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'Which patch fixes the Chapter 2 Chronolog softlock?',
+        answer:
+          'The official v1.0.41 notes list a fix for the Chronolog sequence-break softlock.',
+      },
+      {
+        question: 'Should Sketchy audio continue after closing the app?',
+        answer: 'No. Version 1.0.41 fixes that behavior.',
       },
     ],
   },
