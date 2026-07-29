@@ -1,7 +1,7 @@
 import { cavePuzzleGuides, cavePuzzleVideoAt } from './cave-puzzle-guides';
 import type { Guide, GuideVideo } from './types';
 
-const checkedAt = '2026-07-24';
+const checkedAt = '2026-07-29';
 const publishedAt = '2026-07-20';
 
 const videos = {
@@ -54,6 +54,153 @@ const base = {
 };
 
 export const guides: Guide[] = [
+  {
+    slug: 'patch-1-0-48-tomb-chronolog-fixes',
+    path: '/guides/patch-1-0-48-tomb-chronolog-fixes',
+    title: 'Desktop Explorer Patch 1.0.48',
+    seoTitle: 'Desktop Explorer 1.0.48 - Tomb & Chronolog Fixes',
+    seoDescription:
+      'See how Desktop Explorer 1.0.48 fixes the repeated Tomb puzzle step and a Chronolog progression lock affecting some locales.',
+    summary:
+      'Patch 1.0.48 fixes a Tomb puzzle that could require repeating a completed step and a locale-specific Chronolog progression lock.',
+    category: 'Status',
+    difficulty: 'Status',
+    coverImageUrl: '/desktop-explorer/screenshots/0.jpg',
+    publishedAt: '2026-07-29',
+    updatedAt: '2026-07-29',
+    sourceStrategy: 'official',
+    sourceNotes:
+      'Summarized from the official Steam Patch Notes v1.0.48. The notes describe recovery fixes, not new puzzle answers.',
+    videoSearchQueries: [
+      'Desktop Explorer patch 1.0.48',
+      'Desktop Explorer Tomb Chronolog fix',
+    ],
+    tags: ['Patch', 'Tomb', 'Chronolog'],
+    relatedRoutes: [
+      '/guides/temple-walkthrough',
+      '/guides/full-walkthrough',
+      '/guides/patch-1-0-46-tower-softlock-fixes',
+      '/guides/patch-1-0-41-softlock-fixes',
+    ],
+    body: [
+      {
+        heading: 'The Tomb puzzle should register its completed step',
+        paragraphs: [
+          'Some players had to repeat a Tomb puzzle step before progression registered. Version 1.0.48 fixes that state check, so update the game and retry the normal sequence once before changing files or restarting the chapter.',
+          'The official notes do not change the Tomb answer itself. If the next state still fails to appear, close the active puzzle windows, reload the current profile and repeat only the last intended action.',
+        ],
+      },
+      {
+        heading: 'Chronolog progression is fixed for affected locales',
+        paragraphs: [
+          'The patch also fixes a Chronolog progression lock that occurred in certain locales. Players using a non-English language should install 1.0.48 before treating a translated label or unresponsive transition as a bad solution.',
+          'Keep the current save and retest the blocked interaction first. Switching language can help isolate an old localization problem, but it should not be required as the permanent solution on the patched build.',
+        ],
+        bullets: [
+          'Confirm Steam has installed version 1.0.48 or newer.',
+          'Retry the intended Tomb or Chronolog action only once.',
+          'Keep a save backup before changing puzzle files or language.',
+        ],
+      },
+      {
+        heading: 'What does not change',
+        paragraphs: [
+          'Patch 1.0.48 does not announce new passwords, routes or story content. Existing Tomb and Chronolog walkthrough steps remain valid; the update changes whether the game reliably accepts the correct progression state.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What does Desktop Explorer 1.0.48 fix?',
+        answer:
+          'It fixes a Tomb puzzle step that could need repeating and a Chronolog progression lock affecting certain locales.',
+      },
+      {
+        question: 'Did the Tomb puzzle answer change?',
+        answer:
+          'No answer change is listed. The patch fixes how completion is registered.',
+      },
+      {
+        question: 'Should I start a new save after the patch?',
+        answer:
+          'No restart is requested in the official notes. Update, keep a backup and retry the affected step on the existing save first.',
+      },
+    ],
+  },
+  {
+    slug: 'patch-1-0-46-tower-softlock-fixes',
+    path: '/guides/patch-1-0-46-tower-softlock-fixes',
+    title: 'Desktop Explorer Patch 1.0.46',
+    seoTitle: 'Desktop Explorer 1.0.46 - Tower Softlock Fixes',
+    seoDescription:
+      'See what Desktop Explorer 1.0.46 fixes at the Tower entrance, in Storyteller+ desktops, Wormhole and MineSniffer.',
+    summary:
+      'Patch 1.0.46 fixes two progression softlocks and restores expected behavior for Wormhole after The Copper Box and MineSniffer flags.',
+    category: 'Status',
+    difficulty: 'Status',
+    coverImageUrl: '/desktop-explorer/screenshots/0.jpg',
+    publishedAt: '2026-07-24',
+    updatedAt: '2026-07-28',
+    sourceStrategy: 'official',
+    sourceNotes:
+      'Summarized from the official Steam Patch Notes v1.0.46. The page avoids exposing puzzle passwords because the patch changes recovery behavior, not puzzle answers.',
+    videoSearchQueries: [
+      'Desktop Explorer patch 1.0.46',
+      'Desktop Explorer Tower entrance softlock',
+    ],
+    tags: ['Patch', 'Softlock', 'Tower'],
+    relatedRoutes: [
+      '/guides/beginner-spoiler-light-hints',
+      '/guides/full-walkthrough',
+      '/guides/patch-1-0-41-softlock-fixes',
+      '/guides/all-puzzle-solutions-passwords',
+    ],
+    body: [
+      {
+        heading: 'Tower entrance progression fix',
+        paragraphs: [
+          'Version 1.0.46 fixes a progression softlock at the Tower entrance. Update and restart the game, then return through the normal preceding desktop rather than trying an old sequence-break workaround.',
+          'Keep the current save until the entrance transition completes. If it still fails, record the previous objective and the last desktop used so the remaining case can be separated from the fixed general bug.',
+        ],
+      },
+      {
+        heading: 'Storyteller+ desktop recovery',
+        paragraphs: [
+          'The patch closes a case where abusing Storyteller+ tags could lock the player out of a desktop. Players affected by that route should load the current build and use the intended tag state before changing more files.',
+          'This is a recovery fix, not an invitation to treat every tag combination as supported. Preserve a backup before experimenting with puzzle state.',
+        ],
+      },
+      {
+        heading: 'Wormhole and MineSniffer changes',
+        paragraphs: [
+          'Wormhole should remain playable in other desktops after purchasing The Copper Box. MineSniffer should also stop producing infinite flags.',
+          'If a guide was previously blocked by either behavior, retest the exact action once on 1.0.46. The underlying puzzle solution is unchanged, so no password or answer route needs to be rewritten.',
+        ],
+        bullets: [
+          'Confirm the build is 1.0.46 or newer.',
+          'Retest the affected desktop before restarting the story.',
+          'Keep a save backup before using Storyteller+ tags.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What does Desktop Explorer 1.0.46 fix?',
+        answer:
+          'It fixes the Tower entrance softlock, a Storyteller+ desktop lockout, Wormhole access after The Copper Box and infinite MineSniffer flags.',
+      },
+      {
+        question: 'Do puzzle passwords change in 1.0.46?',
+        answer:
+          'The official notes do not list password changes. The update fixes stability and progression behavior.',
+      },
+      {
+        question: 'Should I restart my playthrough?',
+        answer:
+          'Retest the affected step on the updated build first. Keep a backup, but a full restart should not be the first response.',
+      },
+    ],
+  },
   {
     ...base,
     slug: 'beginner-spoiler-light-hints',
