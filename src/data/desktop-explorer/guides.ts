@@ -1,7 +1,7 @@
 import { cavePuzzleGuides, cavePuzzleVideoAt } from './cave-puzzle-guides';
 import type { Guide, GuideVideo } from './types';
 
-const checkedAt = '2026-07-29';
+const checkedAt = '2026-07-31';
 const publishedAt = '2026-07-20';
 
 const videos = {
@@ -54,6 +54,81 @@ const base = {
 };
 
 export const guides: Guide[] = [
+  {
+    slug: 'patch-1-0-50-vending-machine-fixes',
+    path: '/guides/patch-1-0-50-vending-machine-fixes',
+    title: 'Desktop Explorer Patch 1.0.50',
+    seoTitle: 'Desktop Explorer 1.0.50 - Vending Machine Fixes',
+    seoDescription:
+      'See what Desktop Explorer 1.0.50 fixes for the Vending Machine, arcade movement, blackPawn inventory, controllers, localization and stability.',
+    summary:
+      'Patch 1.0.50 fixes a Vending Machine LooseChange display problem and several smaller interactions that could make a correct route look broken.',
+    category: 'Status',
+    difficulty: 'Status',
+    coverImageUrl: '/desktop-explorer/screenshots/0.jpg',
+    publishedAt: '2026-07-31',
+    updatedAt: '2026-07-31',
+    sourceStrategy: 'official',
+    sourceNotes:
+      'Summarized from the official Steam Patch Notes v1.0.50 published July 30. The update fixes state and display behavior; it does not announce new puzzle answers.',
+    videoSearchQueries: [
+      'Desktop Explorer patch 1.0.50',
+      'Desktop Explorer vending machine LooseChange',
+      'Desktop Explorer arcade walkthrough',
+    ],
+    tags: ['Patch', 'Vending Machine', 'Arcade'],
+    relatedRoutes: [
+      '/guides/full-walkthrough',
+      '/guides/all-puzzle-solutions-passwords',
+      '/guides/patch-1-0-48-tomb-chronolog-fixes',
+      '/guides/beginner-spoiler-light-hints',
+    ],
+    body: [
+      {
+        heading: 'The Vending Machine should show LooseChange correctly',
+        paragraphs: [
+          'Version 1.0.50 fixes the Vending Machine failing to update its displayed LooseChange quantity. If the interface previously looked unchanged after collecting or spending change, install the patch before repeating the route or resetting progress.',
+          'The fix concerns the visible inventory state, not a newly published password. Reopen the relevant window after updating and compare the displayed amount with the action you just completed.',
+        ],
+      },
+      {
+        heading: 'Arcade and inventory interactions are more reliable',
+        paragraphs: [
+          'The patch corrects movement behavior in the arcade before tickets are obtained and fixes how blackPawn inventory is displayed. Both issues could make a valid progression step look unavailable or incorrectly recorded.',
+          'Retry the normal arcade sequence once on 1.0.50 before following a workaround recorded on an older build. For inventory issues, close and reopen blackPawn after the update instead of editing save data.',
+        ],
+        bullets: [
+          'Confirm Steam has installed version 1.0.50 or newer.',
+          'Reload the current profile before repeating a progression step.',
+          'Keep a save backup before using any community workaround.',
+        ],
+      },
+      {
+        heading: 'Controller, localization and stability fixes',
+        paragraphs: [
+          'Version 1.0.50 also includes controller-interface, localization and general stability corrections. A translated label or controller prompt that disagrees with an older walkthrough may therefore be a version difference rather than a different solution.',
+          'Keep the current game language and input method while reproducing the issue, then report the exact screen and build if it persists. This produces a cleaner bug report than changing several settings at once.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'What does Desktop Explorer 1.0.50 fix?',
+        answer:
+          'It fixes the Vending Machine LooseChange display, arcade movement before tickets, blackPawn inventory display and several controller, localization and stability issues.',
+      },
+      {
+        question: 'Did the Vending Machine puzzle answer change?',
+        answer:
+          'No new answer is announced. The patch fixes how the LooseChange quantity updates on screen.',
+      },
+      {
+        question: 'Should I restart my save?',
+        answer:
+          'The notes do not request a new save. Update, reload the current profile and retry the affected interaction first.',
+      },
+    ],
+  },
   {
     slug: 'patch-1-0-48-tomb-chronolog-fixes',
     path: '/guides/patch-1-0-48-tomb-chronolog-fixes',
