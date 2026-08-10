@@ -11,7 +11,7 @@ const cavePuzzleWalkthrough = {
   thumbnailUrl: 'https://i.ytimg.com/vi/8chb_61JDdE/sddefault.jpg',
   publishedAt: '2026-07-18',
   viewCountLabel: 'Focused Cave puzzle walkthrough',
-  checkedAt: '2026-08-04',
+  checkedAt: '2026-08-10',
 } satisfies GuideVideo;
 
 export function cavePuzzleVideoAt(startSeconds: number): GuideVideo {

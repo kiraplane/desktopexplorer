@@ -1,7 +1,7 @@
 import { cavePuzzleGuides, cavePuzzleVideoAt } from './cave-puzzle-guides';
 import type { Guide, GuideVideo } from './types';
 
-const checkedAt = '2026-08-04';
+const checkedAt = '2026-08-10';
 const publishedAt = '2026-07-20';
 
 const videos = {
