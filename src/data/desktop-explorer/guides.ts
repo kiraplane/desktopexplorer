@@ -1,10 +1,20 @@
 import { cavePuzzleGuides, cavePuzzleVideoAt } from './cave-puzzle-guides';
 import type { Guide, GuideVideo } from './types';
 
-const checkedAt = '2026-08-10';
+const checkedAt = '2026-08-11';
 const publishedAt = '2026-07-20';
 
 const videos = {
+  soundtrackAnnouncement: {
+    id: 'lqYPPAKzAi4',
+    title: 'Desktop Explorer Original Soundtrack Announcement',
+    channel: 'Desktop Explorer',
+    url: 'https://www.youtube.com/watch?v=lqYPPAKzAi4',
+    thumbnailUrl: '/desktop-explorer/guides/official-trailer.jpg',
+    publishedAt: '2026-08-10',
+    viewCountLabel: 'Official soundtrack announcement',
+    checkedAt,
+  },
   officialTrailer: {
     id: 'qfpuWJIeCXo',
     title: 'Desktop Explorer - Release Date Trailer',
@@ -54,6 +64,78 @@ const base = {
 };
 
 export const guides: Guide[] = [
+  {
+    slug: 'soundtrack-guide',
+    path: '/guides/soundtrack-guide',
+    title: 'Desktop Explorer Soundtrack Guide',
+    seoTitle: 'Desktop Explorer Soundtrack: Tracks, Composer & Bundle',
+    seoDescription:
+      'See what is included in the Desktop Explorer soundtrack: 45 tracks, nearly two hours of music, composer Jorge Noel Flores and the Steam bundle.',
+    summary:
+      'The official soundtrack is now available on Steam with 45 tracks, nearly two hours of puzzle and story music, plus songs from the in-game band The Sweaters.',
+    category: 'Reference',
+    difficulty: 'Reference',
+    coverImageUrl: videos.soundtrackAnnouncement.thumbnailUrl,
+    publishedAt: '2026-08-10',
+    updatedAt: '2026-08-11',
+    sourceStrategy: 'official_and_youtube',
+    sourceNotes:
+      'Based on the official August 10 Steam soundtrack announcement and its linked official video. Store pricing can change by region.',
+    videoSearchQueries: [
+      'Desktop Explorer soundtrack',
+      'Desktop Explorer OST The Sweaters',
+    ],
+    video: videos.soundtrackAnnouncement,
+    tags: ['Soundtrack', 'OST', 'The Sweaters'],
+    relatedRoutes: [
+      '/guides/full-walkthrough',
+      '/guides/achievements-guide',
+      '/review',
+      '/download',
+    ],
+    body: [
+      {
+        heading: 'What the soundtrack includes',
+        paragraphs: [
+          'The Desktop Explorer Original Soundtrack contains 45 tracks and runs for nearly two hours. Its music covers puzzle states, story scenes and the nostalgic computer soundscape used throughout the game.',
+          'The collection also includes songs by the fictional band The Sweaters. Those tracks are part of the game world, not a separate fan compilation.',
+        ],
+      },
+      {
+        heading: 'Composer and official release',
+        paragraphs: [
+          'Jorge Noel Flores composed the original score specifically for Desktop Explorer. The soundtrack is sold as its own Steam app, so owning the base game does not automatically mean the soundtrack is in the library.',
+          'Use the official Steam soundtrack listing for the current regional price and file details. The announcement also links a game-and-soundtrack bundle with a 10% bundle saving at launch.',
+        ],
+      },
+      {
+        heading: 'Choose between the soundtrack and bundle',
+        paragraphs: [
+          'Players who already own the game should compare the soundtrack-only price with the bundle completion price shown by Steam. New players can use the bundle when the combined checkout is lower than buying both separately.',
+          'Steam bundle discounts and regional prices can change. Check the live cart total before purchasing rather than treating the launch discount as permanent.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: 'How many tracks are in the Desktop Explorer soundtrack?',
+        answer: 'The official soundtrack contains 45 tracks.',
+      },
+      {
+        question: 'How long is the Desktop Explorer OST?',
+        answer: 'The official announcement describes it as nearly two hours of music.',
+      },
+      {
+        question: 'Who composed the soundtrack?',
+        answer: 'The original score was composed by Jorge Noel Flores.',
+      },
+      {
+        question: 'Are The Sweaters songs included?',
+        answer:
+          'Yes. The official soundtrack includes music from the fictional in-game band The Sweaters.',
+      },
+    ],
+  },
   {
     slug: 'patch-1-0-50-vending-machine-fixes',
     path: '/guides/patch-1-0-50-vending-machine-fixes',

@@ -5,7 +5,7 @@ import type {
   KeywordMatrixItem,
 } from './types';
 
-export const checkedAt = '2026-08-10';
+export const checkedAt = '2026-08-11';
 
 export const siteFacts = {
   siteName: 'Desktop Explorer Wiki',
@@ -184,6 +184,22 @@ export const achievements: Achievement[] = [
 export const sources: DataSource[] = [
   {
     type: 'official',
+    label: 'Desktop Explorer soundtrack announcement',
+    url: 'https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1840310314352393',
+    checkedAt,
+    confidence: 'high',
+    note: 'Primary source for the 45-track, nearly two-hour soundtrack, composer, The Sweaters music and launch bundle.',
+  },
+  {
+    type: 'youtube',
+    label: 'Official soundtrack announcement video',
+    url: 'https://www.youtube.com/watch?v=lqYPPAKzAi4',
+    checkedAt,
+    confidence: 'high',
+    note: 'Official video embedded in the Steam soundtrack announcement.',
+  },
+  {
+    type: 'official',
     label: 'Desktop Explorer Steam store',
     url: siteFacts.officialSteamUrl,
     checkedAt,
@@ -250,7 +266,7 @@ export const sources: DataSource[] = [
     type: 'youtube',
     label: 'Dus10 first 10 puzzles walkthrough',
     url: 'https://www.youtube.com/watch?v=8chb_61JDdE',
-    checkedAt: '2026-08-10',
+    checkedAt: '2026-08-11',
     confidence: 'medium',
     note: 'Focused full-release Cave walkthrough verified puzzle by puzzle and embedded with per-page start times.',
   },
